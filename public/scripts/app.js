@@ -1,11 +1,5 @@
-console.log('App.js is running')
+"use strict";
 
-// JSX - Javascript XML
-//let template = <p>This is JSX from app.js</p>;
-let template = /*#__PURE__*/React.createElement("p", {
-    id: "someid"
-  }, "This is JSX from app.js");
-  
-let appRoot = document.getElementById('app');
-
-ReactDOM.render(template, appRoot)
+var template = /*#__PURE__*/React.createElement("h1", null, "Indecision app");
+var appRoot = document.getElementById('app');
+ReactDOM.render(template, appRoot);

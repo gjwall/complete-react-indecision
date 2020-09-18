@@ -1,0 +1,8 @@
+{
+  "name": "complete-react-indecision",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gjwall/complete-react-indecision.git",
+  "author": "GJW",
+  "license": "MIT"
+}
