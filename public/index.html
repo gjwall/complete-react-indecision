@@ -4,10 +4,20 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 npm i -g live-server
 live-server public
 
+install
+npm init
 npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react
+or
+yarn init
+yarn add @babel/core @babel/cli @babel/preset-env @babel/preset-react
+
+then
 npx babel src/app.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch
 Addition of babel.config.json in the root and follow the instructions here:
 https://babeljs.io/docs/en/usage
+
+or using yarn
+
 -->
 <html>
     <head>
