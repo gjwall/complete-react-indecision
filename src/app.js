@@ -16,29 +16,37 @@ const template = (
     </div>
 );  
 
+// Variables
 let count = 0;
+const appRoot = document.getElementById('app');
+
+// Functions 
 const addOne = () => {
-    console.log('addOne called');
+    count++;
+    renderCounterApp();
 };
 
 const minusOne = () => {
-    console.log('minusOne called');
+    count--;
+    renderCounterApp();
 };
 
 const reset = () => {
-    console.log('reset called');
+    count = 0; 
+    renderCounterApp();
 };
 
-const templateTwo = (
-    <div>
-        <h1>Count: {count}</h1>
-        <button onClick={(addOne)}>+1</button>
-        <button onClick={minusOne}>-1</button>
-        <button onClick={reset}>Reset</button>
-    </div>
-);
-console.log(templateTwo);
+const renderCounterApp = () => {
+    const templateTwo = (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={(addOne)}>+1</button>
+            <button onClick={minusOne}>-1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    );
 
-const appRoot = document.getElementById('app');
+    ReactDOM.render(templateTwo, appRoot);
+};
 
-ReactDOM.render(templateTwo, appRoot);
+renderCounterApp();
