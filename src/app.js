@@ -1,10 +1,10 @@
-let app = {
+const app = {
     title: 'Indecision app',
     subtitle: 'Use the computer',
     options: ['One','Two'] 
-}
+};
 
-let template = (
+const template = (
     <div>
         <h1>{app.title}</h1>
         {app.subtitle && <p>{app.subtitle}</p>}
@@ -16,19 +16,19 @@ let template = (
     </div>
 );  
 
-var user = {
+const user = {
     name: 'XYZ',
     age: 18,
     location: 'here'
-}
+};
 
 function getLocation (location) {
     if(location) {
         return <p>Location: {location}</p>
     }
-}
+};
 
-let templateTwo = (
+const templateTwo = (
     <div>
         <h1>{user.name ? user.name: 'Anonymous'}</h1>
         {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
@@ -37,6 +37,6 @@ let templateTwo = (
     </div>
 );
 
-let appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(template, appRoot);
