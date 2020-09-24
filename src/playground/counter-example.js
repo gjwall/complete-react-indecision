@@ -5,7 +5,7 @@ class Counter extends React.Component {
         this.handleMinusOne = this.handleMinusOne.bind(this);
         this.handleReset = this.handleReset.bind(this);
         this.state = {
-            count: 0,
+            count: props.startingCount,
             name: 'Julia' // Example second property that is not updated
         };
     }
@@ -40,6 +40,10 @@ class Counter extends React.Component {
             </div>
         );
     }
-}
+};
 
-ReactDOM.render(<Counter/>, document.getElementById('app'));
+Counter.defaultProps = {
+    startingCount: 0
+};
+
+ReactDOM.render(<Counter startingCount={-10} />, document.getElementById('app'));

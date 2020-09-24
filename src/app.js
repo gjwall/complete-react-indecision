@@ -5,7 +5,7 @@ class IndecisionApp extends React.Component {
         this.handlePick = this.handlePick.bind(this); 
         this.handleAddOption = this.handleAddOption.bind(this); 
         this.state = {
-            options: []
+            options: props.options
         }
     }
 
@@ -38,11 +38,10 @@ class IndecisionApp extends React.Component {
     }
 
     render() {
-        const title = 'Indecision';
         const subtitle = 'Some text';
         return (
             <div>
-                <Header title={title} subtitle={subtitle} />
+                <Header subtitle={subtitle} />
                 <Action 
                     hasOptions={this.state.options.length > 0}
                     handlePick={this.handlePick}
@@ -59,13 +58,22 @@ class IndecisionApp extends React.Component {
     }
 };
 
+
+IndecisionApp.defaultProps = {
+    options: []
+}
+
 const Header = (props) => {
     return(
         <div>
             <h1>{props.title}</h1>
-            <h2>{props.subtitle}</h2>
+            {props.subtitle && <h2>{props.subtitle}</h2>}
         </div>
     );
+};
+
+Header.defaultProps = {
+    title: 'Indecision'
 };
 
 const Action = (props) => {
@@ -101,16 +109,6 @@ const Option = (props) => {
     );
 };
 
-// class Option extends React.Component {
-//     render() {
-//         return(
-//             <div>
-//                 {this.props.optionText}
-//             </div>
-//         );
-//     }
-// };
-
 class AddOption extends React.Component {
     constructor(props) {
         super(props);
@@ -144,14 +142,4 @@ class AddOption extends React.Component {
     }
 };
 
-//Stateless functional component
-// const User = (props) => {
-//     return(
-//         <div>
-//             <p>Name: {props.name}</p>
-//             <p>Age: {props.age}</p>
-//         </div>
-//     );
-// };
-
-ReactDOM.render(<IndecisionApp />, document.getElementById('app')); 
+ReactDOM.render(<IndecisionApp options={['one', 'two']}/>, document.getElementById('app')); 
