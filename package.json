@@ -14,7 +14,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
-    "sass-loader": "^10.0.2",
     "validator": "^13.1.17"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
+    "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
