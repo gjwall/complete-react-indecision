@@ -13,6 +13,18 @@ module.exports = {
             loader: 'babel-loader',
             test: /\.js$/, // Make sure the file ends in .js
             exclude: /node_modules/
+        },
+        {
+            use: [  
+                    // Creates `style` nodes from JS strings
+                    'style-loader',
+                    // Translates CSS into CommonJS  
+                    'css-loader',
+                    // Compiles Sass to CSS
+                    'sass-loader'
+                ],
+            test: /\.s[ac]ss$/i, // Make sure the file ends in .scss and ignore case
+            exclude: /node_modules/
         }]
     },
     devtool: 'eval-cheap-module-source-map',
