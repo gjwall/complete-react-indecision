@@ -7,9 +7,10 @@ const Option = (props) => (
         // This way does not pass in the proper arguments
         //onClick={props.handleDeleteOption}
         // This way does pass in the arguments
-        onClick={(e) => {
-            props.handleDeleteOption(props.optionText);
-        }}
+            className="button button--link"
+            onClick={(e) => {
+                props.handleDeleteOption(props.optionText);
+            }}
         >
             Remove
         </button>
