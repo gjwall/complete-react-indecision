@@ -15,16 +15,17 @@ module.exports = {
             exclude: /node_modules/
         },
         {
+            // Make sure the file ends in .scss or .css
+            test: /\.s?(a|c)ss$/i, 
             use: [  
-                    // Creates `style` nodes from JS strings
-                    'style-loader',
-                    // Translates CSS into CommonJS  
-                    'css-loader',
-                    // Compiles Sass to CSS
-                    'sass-loader'
-                ],
-            test: /\.s[ac]ss$/i, // Make sure the file ends in .scss and ignore case
-            exclude: /node_modules/
+                // Creates `style` nodes from JS strings
+                'style-loader',
+                // Translates CSS into CommonJS  
+                'css-loader',
+                // Compiles Sass to CSS
+                'sass-loader'
+            ],
+            exclude: /\.module.(s(a|c)ss)$/
         }]
     },
     devtool: 'eval-cheap-module-source-map',
